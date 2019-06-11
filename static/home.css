@@ -1,0 +1,19 @@
+.count{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hn{
+    font-size: 400%;
+    color:coral;
+    text-align: center;
+}
+
+body{
+    background-color: bisque;
+}
+
+h2{
+    color: crimson;
+}

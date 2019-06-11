@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel='stylesheet' type="text/css" href = "{%static 'home.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap&subset=korean" rel="stylesheet">
+    <style>
+    h1, h2, p
+    {font-family: 'Yeon Sung', cursive;}
+    </style>
 </head>
 <body>
-    <h1>여기서 단어를 세세요 !</h1>
-    <form action = "{% url 'result' %}" method = 'GET'>
-        <textarea rows = '10' cols = '60' name = 'fulltext'></textarea>
-        <br>
-        <input type='submit' value='count!'>
-    </form>    
+    {% block content %}
+    <div class='count'>
+        <h1 class="hn">여기서 단어를 세세요 !</h1>
+        <form action = "{% url 'result' %}" method = 'GET'>
+            <textarea rows = '10' cols = '60' name = 'fulltext'></textarea>
+            <br>
+            <input type='submit' value='count!'>
+        </form>    
+    </div>
+    {% endblock content %}
 </body>
 </html>

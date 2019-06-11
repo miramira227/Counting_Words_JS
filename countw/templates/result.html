@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1> 당신이 입력한 텍스트는 {{  wordcount  }} 단어 입니다. </h1>  
-    <a href = "{%url 'home' %}">다시하기</a>
-    <h2> 입력받은 텍스트 </h2>
-    <p> {{  text  }}</p>
-    <h2> 단어 카운트 </h2>    
-    <div>
-
-        {% for key, value in textdic %}
-        {{key}} : {{value}}
-        <br>
-        {% endfor %}
-    </div>
-</body>
-</html>
+{% extends 'home.html' %}
+{% block content %}
+<div class="count">
+<h1 class="hn"> 당신이 입력한 텍스트는 {{  wordcount  }} 단어 입니다. </h1>  
+<a href = "{%url 'home' %}">다시하기</a>
+<h2> 입력받은 텍스트 </h2>
+<p> {{  text  }}</p>
+<h2> 단어 카운트 </h2>    
+<div>
+    {% for key, value in textdic %}
+    <p>{{key}} : {{value}}</p>
+    <br>
+    {% endfor %}
+</div>
+</div>
+{% endblock content%}
